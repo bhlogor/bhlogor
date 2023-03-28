@@ -43,7 +43,7 @@ export default function Home({ data }: any) {
 
 export const getServerSideProps: GetServerSideProps = async ({ query }: any) =>  {
   const page = query.page || 1;
-  const res = await fetch(`http://localhost:3000/api/?page=${page}`);
+  const res = await fetch(`http://127.0.0.1:3000/api/?page=${page}`);
   const data = await res.json();
 
   return {
