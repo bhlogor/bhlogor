@@ -40,12 +40,15 @@ export default function Home({ data }: any) {
     </div>
   )
 }
-
+async function fetchPost( page: any) {
+  const res = await fetch(
+    `http://localhost:3000/api/?page=${page}`
+  );
+  return res.json();
+}
 export const getServerSideProps: GetServerSideProps = async ({ query }: any) =>  {
   const page = query.page || 1;
-  const res = await fetch(`https://bhlogor-github-io.vercel.app/api/?page=${page}`);
-  const data = await res.json();
-
+  const data = await fetchPost(page);
   return {
     props: { data }
   }
