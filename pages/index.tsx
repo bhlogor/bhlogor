@@ -20,8 +20,8 @@ export default function Home({ data }: any) {
       pathname: '/',
       query: { page: page },
     }, '/');
-  }, [page]);
-
+  }, [page]); 
+  
   return (
     <div className='flex flex-col'>
       <ul>

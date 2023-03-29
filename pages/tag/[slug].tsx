@@ -31,7 +31,12 @@ export default function Tag({ data }: any) {
 
 export const getServerSideProps: GetServerSideProps = async ({ query }: any) =>  {
   const { slug } = query
-  const res = await fetch(`http://localhost:3000/api/tag/${slug}`);
+  const res = await fetch(`https://kqprknumdqwifwdehnht.supabase.co/rest/v1/posts?select=*&tag=eq.${slug}`, {
+    headers: {
+    'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxcHJrbnVtZHF3aWZ3ZGVobmh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzUxNDY2NzIsImV4cCI6MTk5MDcyMjY3Mn0.YovbUTU4W1QxU0AYC3hHEcIQqkt1ot-d_UpUkau1WBQ',
+    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxcHJrbnVtZHF3aWZ3ZGVobmh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzUxNDY2NzIsImV4cCI6MTk5MDcyMjY3Mn0.YovbUTU4W1QxU0AYC3hHEcIQqkt1ot-d_UpUkau1WBQ'
+    }
+  });
   const data = await res.json();
 
   return {
