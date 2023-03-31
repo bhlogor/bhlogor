@@ -19,7 +19,7 @@ export default function Tag({ data }: any) {
       <ul>
       {data.map((p: Post) => (
         <li key={p.id}>
-          <Link href="/[slug]" as={`/${p.slug}`}>
+          <Link prefetch={false} href="/[slug]" as={`/${p.slug}`}>
               {p.title}
             </Link>
         </li> 
@@ -31,7 +31,7 @@ export default function Tag({ data }: any) {
 
 export const getServerSideProps: GetServerSideProps = async ({ query }: any) =>  {
   const { slug } = query
-  const res = await fetch(`https://kqprknumdqwifwdehnht.supabase.co/rest/v1/posts?select=*&tag=eq.${slug}`, {
+  const res = await fetch(`https://kqprknumdqwifwdehnht.supabase.co/rest/v1/rpc/get_index?tag=eq.${slug}`, {
     headers: {
     'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxcHJrbnVtZHF3aWZ3ZGVobmh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzUxNDY2NzIsImV4cCI6MTk5MDcyMjY3Mn0.YovbUTU4W1QxU0AYC3hHEcIQqkt1ot-d_UpUkau1WBQ',
     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxcHJrbnVtZHF3aWZ3ZGVobmh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzUxNDY2NzIsImV4cCI6MTk5MDcyMjY3Mn0.YovbUTU4W1QxU0AYC3hHEcIQqkt1ot-d_UpUkau1WBQ'
