@@ -31,12 +31,13 @@ export default function Home({ data }: any) {
     <title>PostHub</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="PostHub"></meta>
+        <meta name="description" content="PostHub" />
+        < meta google-site-verification="UQypZWoWqziUfWddEkF3sjjx-AKgoT7CklTJqOuEEMk" />
       </Head>
       {data.map((p: Post) => (
         <div className='mt-8 mb-24 flex flex-col rounded-lg shadow-lg overflow-hidden' key={p.id}>
           <div className='flex-shrink-0 bg-white'>
-            <img className='h-72 w-full object-cover' src={p.image} />
+            <img className='h-72 w-full object-cover' src={p.image} alt={'Image' + p.title} />
           </div>
           <div className='flex-1 bg-white p-6 flex flex-col justify-between'>
               <Link prefetch={false} href={p.slug} legacyBehavior>
