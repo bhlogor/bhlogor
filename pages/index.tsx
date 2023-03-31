@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { GetServerSideProps } from 'next'
 import Link from 'next/link'
-import Head from 'next/head';
+import Head from 'next/head'
 
 type Post = {
   id: string;
@@ -32,7 +32,7 @@ export default function Home({ data }: any) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="PostHub" />
-        < meta google-site-verification="UQypZWoWqziUfWddEkF3sjjx-AKgoT7CklTJqOuEEMk" />
+        <meta name="google-site-verification" content="UQypZWoWqziUfWddEkF3sjjx-AKgoT7CklTJqOuEEMk" />
       </Head>
       {data.map((p: Post) => (
         <div className='mt-8 mb-24 flex flex-col rounded-lg shadow-lg overflow-hidden' key={p.id}>
