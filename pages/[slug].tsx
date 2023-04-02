@@ -43,6 +43,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }: any) => 
   if (!data.length) { 
     return { notFound: true, }
    }
+   console.error()
   return {
     props: {
       data, 

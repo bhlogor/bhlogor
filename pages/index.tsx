@@ -32,7 +32,7 @@ export default function Home({ data }: any) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="PostHub" />
-        <meta name="google-site-verification" content="UQypZWoWqziUfWddEkF3sjjx-AKgoT7CklTJqOuEEMk" />
+        <meta name="google-site-verification" content="7BWdUA58XJuwaBKCFnPmbcq5HgxO57y8u7tQ5v0zPZo" />
       </Head>
       {data.map((p: Post) => (
         <div className='mt-8 mb-24 flex flex-col rounded-lg shadow-lg overflow-hidden' key={p.id}>
