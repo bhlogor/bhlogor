@@ -37,7 +37,7 @@ export default function Home({ data }: any) {
       {data.map((p: Post) => (
         <div className='mt-8 mb-24 flex flex-col rounded-lg shadow-lg overflow-hidden' key={p.id}>
           <div className='flex-shrink-0 bg-white'>
-            <img className='h-72 w-full object-cover' src={p.image} alt={'Image' + p.title} width="100%" height="100%" />
+            <img loading='lazy' className='h-72 w-full object-cover' src={p.image} alt={'Image' + p.title} width="100%" height="100%" />
           </div>
           <div className='flex-1 bg-white p-6 flex flex-col justify-between'>
               <Link prefetch={false} href={p.slug} legacyBehavior>
