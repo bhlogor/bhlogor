@@ -16,7 +16,7 @@ export default function Post({ data }: any) {
       <header className='inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-4xl tracking-tight text-transparent'>
         <h1>{p.title}</h1>
       </header>
-      <div className='pt-2'><img src={p.image} alt={p.title}/></div>
+      <div className='pt-6'><img src={p.image} alt={p.title}  width="100%" height="100%"/></div>
       <div className='pt-6' dangerouslySetInnerHTML={{__html:p["content"]}}></div>
       <div className='pt-6'>
         <span className='text-sm font-mono italic'>{new Intl.DateTimeFormat('en-us', {year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(p.date))}</span> · 
@@ -40,10 +40,12 @@ export const getServerSideProps: GetServerSideProps = async ({ query }: any) => 
     }
   });
   const data = await res.json();
-  if (!data.length) { 
-    return { notFound: true, }
-   }
-   console.error()
+  if (!data.length) {
+    return {
+      notFound: true,
+    }
+  }
+  
   return {
     props: {
       data, 
