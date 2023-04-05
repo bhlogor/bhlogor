@@ -40,11 +40,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }: any) => 
     }
   });
   const data = await res.json();
-  if (!data.length) {
-    return {
-      notFound: true,
-    }
-  }
+  
   
   return {
     props: {
