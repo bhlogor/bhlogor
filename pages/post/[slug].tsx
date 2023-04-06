@@ -22,7 +22,7 @@ export default function Post({ data }: any) {
       <div className='pt-6'>
         <span className='text-sm font-mono italic'>{new Intl.DateTimeFormat('en-us', {year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(p.date))}</span> · 
         <span className='font-bold capitalize'>
-          <Link prefetch={false} href={'tag/' + p.tag} legacyBehavior>
+          <Link prefetch={false} href={'/tag/' + p.tag} legacyBehavior>
              <a>#{p.tag}</a>
           </Link>
         </span>
