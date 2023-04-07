@@ -20,7 +20,7 @@ export default function Post({ data }: any) {
       <div className='pt-6'><img src={p.image} alt={p.title}  width="100%" height="100%"/></div>
       <div className='pt-6' dangerouslySetInnerHTML={{__html:p["content"]}}></div>
       <div className='pt-6'>
-      <Date dateString={p.date} /> · 
+        <small className='font-mono italic'><Date dateString={p.date} /></small> · 
         <span className='font-bold capitalize'>
           <Link prefetch={false} href={'/tag/' + p.tag} legacyBehavior>
              <a>#{p.tag}</a>

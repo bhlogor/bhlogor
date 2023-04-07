@@ -19,7 +19,7 @@ export default function Tag({ data }: any) {
       <ul>
       {data.map((p: Post) => (
         <li key={p.id}>
-          <Link prefetch={false} href={p.slug}>
+          <Link prefetch={false} href={'/' + p.slug}>
               {p.title}
             </Link>
         </li> 
