@@ -40,7 +40,7 @@ export default function Home({ data }: any) {
             <img loading='lazy' className='h-72 w-full object-cover' src={p.image} alt={'Image' + p.title} width="100%" height="100%" />
           </div>
           <div className='flex-1 bg-white p-6 flex flex-col justify-between'>
-              <Link prefetch={false} href={'post/' + p.slug} legacyBehavior>
+              <Link prefetch={false} href={p.slug} legacyBehavior>
               <a><h3 className='mt-2 text-xl leading-7 font-semibold text-gray-900'>{p.title}</h3></a>
               </Link>
                <p className='mt-3 text-base leading-6 text-gray-500'>{p.desc}</p>

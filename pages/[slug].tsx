@@ -6,21 +6,20 @@ export default function Post({ data }: any) {
   return (
     <>
       {data.map((p: any) => 
-      <>
+      <article key={p.id} className='flex flex-col'>
       <Head>
       <title>{`${p.title} #${p.tag}`}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={p.desc}></meta>
       </Head>
-      <article key={p.id} className='flex flex-col'>
       <header className='inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-4xl tracking-tight text-transparent'>
         <h1>{p.title}</h1>
       </header>
       <div className='pt-6'><img src={p.image} alt={p.title}  width="100%" height="100%"/></div>
       <div className='pt-6' dangerouslySetInnerHTML={{__html:p["content"]}}></div>
       <div className='pt-6'>
-        <span className='text-sm font-mono italic'>{new Intl.DateTimeFormat('en-us', {year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(p.date))}</span> · 
+        <span className='text-sm font-mono italic'>{p.date}</span> · 
         <span className='font-bold capitalize'>
           <Link prefetch={false} href={'/tag/' + p.tag} legacyBehavior>
              <a>#{p.tag}</a>
@@ -28,7 +27,6 @@ export default function Post({ data }: any) {
         </span>
         </div>
       </article>
-      </>
       )}
     </>
   )
