@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import Date from '@/components/date';
 
 export default function Post({ data }: any) {
   return (
@@ -19,7 +20,7 @@ export default function Post({ data }: any) {
       <div className='pt-6'><img src={p.image} alt={p.title}  width="100%" height="100%"/></div>
       <div className='pt-6' dangerouslySetInnerHTML={{__html:p["content"]}}></div>
       <div className='pt-6'>
-        <span className='text-sm font-mono italic'>{p.date}</span> · 
+      <Date dateString={p.date} /> · 
         <span className='font-bold capitalize'>
           <Link prefetch={false} href={'/tag/' + p.tag} legacyBehavior>
              <a>#{p.tag}</a>
