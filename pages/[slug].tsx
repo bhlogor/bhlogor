@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import Date from '@/components/date';
 
 export default function Post({ data }: any) {
@@ -17,7 +18,7 @@ export default function Post({ data }: any) {
       <header className='inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-4xl tracking-tight text-transparent'>
         <h1>{p.title}</h1>
       </header>
-      <div className='pt-6'><img src={p.image} alt={p.title}  width="100%" height="100%"/></div>
+      <div className='pt-6'><Image src={p.image} alt={p.title}  width={600} height={250} priority/></div>
       <div className='pt-6' dangerouslySetInnerHTML={{__html:p["content"]}}></div>
       <div className='pt-6'>
         <small className='font-mono italic'><Date dateString={p.date} /></small> · 

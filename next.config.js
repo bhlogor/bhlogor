@@ -10,4 +10,14 @@ module.exports = {
       },
     ]
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'blogger.googleusercontent.com',
+        port: '',
+        pathname: '/img/b/**',
+      },
+    ],
+  },
 }

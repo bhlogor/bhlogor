@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { GetServerSideProps } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
+import Image from 'next/image'
 
 type Post = {
   id: string;
@@ -37,7 +38,7 @@ export default function Home({ data }: any) {
       {data.map((p: Post) => (
         <div className='mt-8 mb-24 flex flex-col rounded-lg shadow-lg overflow-hidden' key={p.id}>
           <div className='flex-shrink-0 bg-white'>
-            <img loading='lazy' className='h-72 w-full object-cover' src={p.image} alt={'Image' + p.title} width="100%" height="100%" />
+            <Image className='h-full w-full object-cover' src={p.image} alt={'Image' + p.title} width={600} height={250} priority/>
           </div>
           <div className='flex-1 bg-white p-6 flex flex-col justify-between'>
               <Link prefetch={false} href={p.slug} legacyBehavior>
@@ -57,7 +58,7 @@ export default function Home({ data }: any) {
 
 export const getServerSideProps: GetServerSideProps = async ({ query }: any ) => {
   const page = query.page || 1;
-  const size: number = 1
+  const size: number = 5
   const start = (page -1) * size
   const end = start + size
   const res = await fetch(`https://kqprknumdqwifwdehnht.supabase.co/rest/v1/rpc/get_index?&offset=${start}&limit=${end}`, {
