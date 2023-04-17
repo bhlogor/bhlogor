@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /sitmap.xml
 Allow: /
-Sitemap: https://post-example.vercel.app/sitemap.xml
+Sitemap: https://postweb.my.id/sitemap.xml
