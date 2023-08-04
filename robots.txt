@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /sitmap.xml
-Allow: /
-Sitemap: https://postweb.my.id/sitemap.xml

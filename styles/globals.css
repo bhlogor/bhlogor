@@ -1,7 +1,0 @@
-body {
-    font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
-    line-height: 1.7;
-}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
