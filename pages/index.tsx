@@ -44,7 +44,7 @@ export default function Home({ data }: any) {
               <Link prefetch={false} href={p.slug} legacyBehavior>
               <a><h3 className='mt-2 text-xl leading-7 font-semibold text-gray-900'>{p.title}</h3></a>
               </Link>
-               <p className='mt-3 text-base leading-6 text-gray-500'>{p.desc}</p>
+               <p className='mt-3 text-gray-500'>{p.desc}</p>
           </div>
         </div> 
       ))}

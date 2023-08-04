@@ -19,7 +19,7 @@ export default function Post({ data }: any) {
         <h1>{p.title}</h1>
       </header>
       <div className='pt-6'><Image src={p.image} alt={p.title}  width={600} height={250} priority/></div>
-      <div className='pt-6' dangerouslySetInnerHTML={{__html:p["content"]}}></div>
+      <section className='pt-6' dangerouslySetInnerHTML={{__html:p["content"]}}></section>
       <div className='pt-6'>
         <small className='font-mono italic'><Date dateString={p.date} /></small> · 
         <span className='font-bold capitalize'>
