@@ -4,7 +4,7 @@
 
 
   .card-body {
-    height: 80vh;
+    height:  min(50vw, 400px);
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;

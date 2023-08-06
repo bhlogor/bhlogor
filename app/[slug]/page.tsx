@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 async function getData(slug: string) {
   const res = await fetch(`https://kqprknumdqwifwdehnht.supabase.co/rest/v1/rpc/get_index?slug=eq.${slug}`, {
     headers: {
@@ -7,13 +9,37 @@ async function getData(slug: string) {
   });
   return res.json()
 }
-export interface GetPostString {
-  params: string;
-  slug: string;
-}
-export default async function Page({ params: { slug } }: any) {
-  const data = await getData(slug)
 
+type Params = {
+  params: {
+    slug: string;
+  }
+}
+
+type Post = {
+  id: number;
+  date: string;
+  slug: string;
+  image: string;
+  title: string;
+  desc: string;
+  content: string;
+  tag: string;
+}
+
+export async function generateMetadata({ params: { slug } }: Params) {
+  const data = await getData(slug)
+  const title = data.map((p: any) => p.title)
+  const desc = data.map((p: any) => p.desc)
+  return {
+      title: `${title} | Postweb`,
+      description:  `${desc} | Postweb`,
+  
+  } 
+}
+
+export default async function Page({ params: { slug } }: Params) {
+  const data = await getData(slug)
   return (
     <>
       {data.map((p: any) =>

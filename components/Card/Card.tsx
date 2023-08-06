@@ -8,7 +8,7 @@ type CardProps = {
 
 function Card({ title, desc, href }: CardProps) {
   return (
-    <div className="card bg-base-300 shadow-xl">
+    <div className="card bg-slate-200 shadow-xl">
       <div className="card-body gap-0">
         <h2 className="card-title text-2xl font-bold line-clamp-1">
         {href && (
