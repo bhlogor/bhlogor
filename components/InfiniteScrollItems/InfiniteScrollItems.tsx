@@ -38,11 +38,10 @@ function InfiniteScrollItems() {
   }, [inView, fetchNextPage, hasNextPage]);
 
   if (!isFetchingNextPage && isFetching) {
-    // only render skeletons when the first page is being fetched
     return (
-      <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
         {Array.from({ length: 4 }).map((_, idx) => (
-          <li key={`Initial_CardSkeleton_${idx}`}>
+          <li className={idx === 0 ? "md:col-span-2" : ""} key={`Initial_CardSkeleton_${idx}`}>
             <CardSkeleton />
           </li>
         ))}
@@ -54,9 +53,9 @@ function InfiniteScrollItems() {
     <>
       {posts.length > 0 ? (
         <>
-          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <ul className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
             {posts.map((post) => (
-              <li key={post.id}>
+              <li className={post.id === 1 ? "md:col-span-2" : ""} key={post.id}>
                 <Card
                   title={post.title}
                   desc={post.desc}
