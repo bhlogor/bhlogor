@@ -1,3 +1,5 @@
+
+import Image from 'next/image';
 import type { Metadata } from "next";
 
 async function getData(slug: string) {
@@ -27,7 +29,7 @@ type Post = {
   tag: string;
 }
 
-export async function generateMetadata({ params: { slug } }: Params) {
+export async function generateMetadata({ params: { slug } }: Params): Promise<Metadata> {
   const data = await getData(slug)
   const title = data.map((p: any) => p.title)
   const desc = data.map((p: any) => p.desc)
@@ -44,9 +46,19 @@ export default async function Page({ params: { slug } }: Params) {
     <>
       {data.map((p: any) =>
         <>
-          <header className='inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-4xl tracking-tight text-transparent'>
-            <h1>{p.title}</h1>
-          </header>
+          <div className="relative overflow-hidden rounded-xl md:rounded-[20px]">
+            <Image
+              className="h-full w-full object-cover"
+              src={p.image}
+              alt="Thumbnail"
+              width={750}
+              height={488}
+              priority
+            />
+          </div>
+          <h1 className='mt-2 text-4xl font-bold leading-tight lg:mt-4 lg:text-6xl'>
+            {p.title}
+          </h1>
           <section className='pt-6' dangerouslySetInnerHTML={{ __html: p["content"] }}></section>
         </>
       )}
