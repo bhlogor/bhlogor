@@ -1,5 +1,5 @@
-
 import Image from 'next/image';
+import placeholder from '/public/thumbnail-placeholder.svg'
 import type { Metadata } from "next";
 
 async function getData(slug: string) {
@@ -31,17 +31,15 @@ type Post = {
 
 export async function generateMetadata({ params: { slug } }: Params): Promise<Metadata> {
   const data = await getData(slug)
-  const title = data.map((p: any) => p.title)
-  const desc = data.map((p: any) => p.desc)
   return {
-      title: `${title} | Postweb`,
-      description:  `${desc} | Postweb`,
+      title: `${data[0].title} | Postweb`,
+      description:  `${data[0].desc} | Postweb`,
   
   } 
 }
 
 export default async function Page({ params: { slug } }: Params) {
-  const data = await getData(slug)
+  const data = await getData(slug);
   return (
     <>
       {data.map((p: any) =>
@@ -49,10 +47,10 @@ export default async function Page({ params: { slug } }: Params) {
           <div className="relative overflow-hidden rounded-xl md:rounded-[20px]">
             <Image
               className="h-full w-full object-cover"
-              src={p.image}
+              src={p.image == null ? placeholder : p.image}
               alt="Thumbnail"
-              width={750}
-              height={488}
+              width={624}
+              height={386}
               priority
             />
           </div>
