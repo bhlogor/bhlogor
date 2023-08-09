@@ -3,9 +3,7 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { useEffect, useMemo } from 'react';
 import { useInView } from 'react-intersection-observer';
-
 import { getPosts } from '@/lib/api/posts';
-
 import Card, { CardSkeleton } from '../Card';
 
 function InfiniteScrollItems() {
@@ -57,6 +55,7 @@ function InfiniteScrollItems() {
             {posts.map((post) => (
               <li className={post.id === 1 ? "md:col-span-2" : ""} key={post.id}>
                 <Card
+                image={post.image}
                   title={post.title}
                   desc={post.desc}
                   href={`/${post.slug}`}
