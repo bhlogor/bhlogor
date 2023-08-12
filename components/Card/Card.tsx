@@ -11,19 +11,17 @@ type CardProps = {
 
 function Card({ image, title, desc, href }: CardProps) {
   return (
-    <div className="card bg-slate-200 shadow-xl">
-      <div className="relative overflow-hidden">
+    <>
+      <div className="flex-1">
             <Image
-              className="card-image w-full object-cover"
+              className="w-full h-auto"
               src={image == null ? placeholder : image}
               alt="Thumbnail"
-              width={624}
-              height={386}
               priority
             />
       </div>
-      <div className="card-body gap-0">
-        <h2 className="card-title text-2xl font-bold line-clamp-1">
+      <div className="p-4">
+        <h2 className="text-2xl font-bold line-clamp-1">
         {href && (
             <Link href={href}>
             {title}
@@ -32,7 +30,7 @@ function Card({ image, title, desc, href }: CardProps) {
         </h2>
         <p className="mt-2 line-clamp-3">{desc}</p>
       </div>
-    </div>
+    </>
   );
 }
 
