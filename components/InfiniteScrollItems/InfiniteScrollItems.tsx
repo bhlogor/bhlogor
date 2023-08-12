@@ -40,7 +40,7 @@ function InfiniteScrollItems() {
         {Array.from({ length: 4 }).map((_, idx) => (
           <li className={idx === 0 ? "md:col-span-2 bg-slate-200 flex flex-col h-full" : "bg-slate-200 flex flex-col h-full"} key={`Initial_CardSkeleton_${idx}`}>
           <div className="flex-1">
-          <div className={idx === 0 ? "w-full h-[188px] md:h-[300px] rounded-lg bg-slate-100" : "w-full h-[188px] rounded-lg bg-slate-100"}/>
+          <div className={idx === 0 ? "w-full h-[200px] md:h-[300px] rounded-lg bg-slate-100" : "w-full h-[200px] md:h-[188px] rounded-lg bg-slate-100"}/>
           </div>
           <div className="p-4">
             <div className="mt-1 h-6 w-5/6 rounded-lg bg-slate-100" />
@@ -57,10 +57,10 @@ function InfiniteScrollItems() {
       {posts.length > 0 ? (
           <ul className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
             {posts.map((post) => (
-            <li className={post.id === 1 ? "md:col-span-2 bg-slate-200 flex flex-col h-full" : "bg-slate-200 flex flex-col h-full"} key={post.id}>
+            <li className={post.id === 1 ? "md:col-span-2 bg-slate-200 flex flex-col h-full rounded-lg overflow-hidden" : "bg-slate-200 flex flex-col h-full rounded-lg overflow-hidden"} key={post.id}>
               <div className="flex-1">
               <Image
-              className={post.id === 1 ? "w-full h-[188px] md:h-[300px]" : "w-full h-[188px]"}
+              className={post.id === 1 ? "w-full h-[200px] md:h-[300px]" : "w-full h-[200px] md:h-[188px]"}
               src={post.image == null ? placeholder : post.image}
               alt="Thumbnail"
               width={post.id === 1 ? "624" : "300"}
@@ -80,7 +80,7 @@ function InfiniteScrollItems() {
               Array.from({ length: 2 }).map((_, idx) => (
                 <li className="bg-slate-200 flex flex-col h-full" ref={idx === 0 ? ref : undefined} key={`Scroll_CardSkeleton_${idx}`}>
                 <div className="flex-1">
-                <div className="w-full h-[188px] rounded-lg bg-slate-100"/>
+                <div className="w-full h-[200px] md:h-[188px] rounded-lg bg-slate-100"/>
                 </div>
                 <div className="p-4">
                   <div className="mt-1 h-6 w-5/6 rounded-lg bg-slate-100" />

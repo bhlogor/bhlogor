@@ -31,6 +31,9 @@ export default function RootLayout({ children }: InfiniteScrollLayoutProps) {
             </section>
           </Providers>
         </main>
+        <footer className="pt-8 pb-6 mt-16 border-t border-t-base-200">
+
+        </footer>
       </body>
     </html>
   );
