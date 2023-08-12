@@ -11,6 +11,7 @@ export interface InfiniteScrollLayoutProps {
 export default function RootLayout({ children }: InfiniteScrollLayoutProps) {
   return (
     <html lang="id">
+      <head/>
       <body>
         <header className="sticky top-0 z-10 bg-stone-100 border-b border-stone-300">
           <nav className="max-w-2xl mx-auto px-6">
