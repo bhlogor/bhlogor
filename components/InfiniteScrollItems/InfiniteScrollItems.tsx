@@ -40,7 +40,7 @@ function InfiniteScrollItems() {
         {Array.from({ length: 4 }).map((_, idx) => (
           <li className={idx === 0 ? "md:col-span-2 bg-slate-200 flex flex-col h-full" : "bg-slate-200 flex flex-col h-full"} key={`Initial_CardSkeleton_${idx}`}>
           <div className="flex-1">
-          <div className={idx === 0 ? "w-full h-[300px] rounded-lg bg-slate-100" : "w-full h-[188px] rounded-lg bg-slate-100"}/>
+          <div className={idx === 0 ? "w-full h-[188px] md:h-[300px] rounded-lg bg-slate-100" : "w-full h-[188px] rounded-lg bg-slate-100"}/>
           </div>
           <div className="p-4">
             <div className="mt-1 h-8 w-5/6 rounded-lg bg-slate-100" />
