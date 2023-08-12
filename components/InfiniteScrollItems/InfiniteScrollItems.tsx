@@ -43,8 +43,8 @@ function InfiniteScrollItems() {
           <div className={idx === 0 ? "w-full h-[188px] md:h-[300px] rounded-lg bg-slate-100" : "w-full h-[188px] rounded-lg bg-slate-100"}/>
           </div>
           <div className="p-4">
-            <div className="mt-1 h-8 w-5/6 rounded-lg bg-slate-100" />
-            <div className="mt-4 h-12 rounded-lg bg-slate-100" />
+            <div className="mt-1 h-6 w-5/6 rounded-lg bg-slate-100" />
+            <div className="mt-2 h-12 rounded-lg bg-slate-100" />
           </div>
           </li>
         ))}
