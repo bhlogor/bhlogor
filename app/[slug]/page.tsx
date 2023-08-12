@@ -44,17 +44,17 @@ export default async function Page({ params: { slug } }: Params) {
     <>
       {data.map((p: any) =>
         <>
-          <div className="relative overflow-hidden rounded-xl md:rounded-[20px]">
+          <div className="relative overflow-hidden">
             <Image
               className="h-full w-full object-cover"
               src={p.image == null ? placeholder : p.image}
               alt="Thumbnail"
               width={624}
-              height={386}
+              height={260}
               priority
             />
           </div>
-          <h1 className='mt-2 text-4xl font-bold leading-tight lg:mt-4 lg:text-6xl'>
+          <h1 className='mt-6 text-4xl font-bold'>
             {p.title}
           </h1>
           <section className='pt-6' dangerouslySetInnerHTML={{ __html: p["content"] }}></section>

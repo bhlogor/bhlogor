@@ -70,7 +70,7 @@ function InfiniteScrollItems() {
               </div>
               <div className="p-4">
               <h2 className="text-2xl line-clamp-1">
-              <Link href={post.slug}>{post.title}</Link>
+              <Link href={post.slug} prefetch={false}>{post.title}</Link>
               </h2>
               <p className="mt-2 line-clamp-3">{post.desc}</p>
               </div>
