@@ -55,7 +55,6 @@ function InfiniteScrollItems() {
   return (
     <>
       {posts.length > 0 ? (
-        <>
           <ul className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
             {posts.map((post) => (
             <li className={post.id === 1 ? "md:col-span-2 bg-slate-200 flex flex-col h-full" : "bg-slate-200 flex flex-col h-full"} key={post.id}>
@@ -90,7 +89,6 @@ function InfiniteScrollItems() {
                 </li>
               ))}
           </ul>
-        </>
       ) : (
         <h1>Sorry, posts are empty.</h1>
       )}

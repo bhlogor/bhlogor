@@ -24,7 +24,6 @@ export async function getPosts({ limit = 3, page = 1 }: GetPostsParam) {
   const offset = (page - 1) * limit;
   const data = await client.get<Post[]>(`/rest/v1/rpc/get_index?offset=${offset}&limit=${limit}`);
   await sleep(500);
-  console.log(data)
   return {
     posts: data,
     pageInfo: {
